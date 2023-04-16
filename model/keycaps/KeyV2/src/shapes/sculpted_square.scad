@@ -9,7 +9,7 @@ function corner_sculpting(progress) = pow(progress, 2) * $corner_sculpting_facto
 module sculpted_square_shape(size, delta, progress) {
   width = size[0];
   height = size[1];
-
+//
   width_difference = delta[0];
   height_difference = delta[1];
   // makes the sides bow

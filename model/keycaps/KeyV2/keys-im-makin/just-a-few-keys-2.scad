@@ -17,14 +17,15 @@ u(1.25) translate_u(-.25,-3) cherry_row(4) front_legend("shift",size=word_size, 
         //$corner_radius = 2.5,
         $width_difference = 6,
         $height_difference = 6,
-        $height_slices = 5,
+        $height_slices = 4,
         //$corner_sculpting_factor = 10,
-        $total_depth = 12,
-        $support_type = "bars",
+        $total_depth = 10,
+        $top_tilt = 10,
+        $support_type = "flared",
         $corner_radius = 1,
-        $dish_skew_y = -1,
+        $dish_skew_y = -2,
         $dish_overdraw_height = 2,
-        $dish_overdraw_width = 4
+        $dish_overdraw_width = 2
 );
 legends_row_2 = [
  ["N"]
@@ -43,12 +44,13 @@ for(y = [0:len(legends_row_2)-1]){
         //$corner_radius = 2.5,
         $width_difference = 6,
         $height_difference = 6,
-        $height_slices = 5,
+        $height_slices = 4,
         //$corner_sculpting_factor = 10,
-        $total_depth = 12,
+        $total_depth = 10,
+        $top_tilt = 10,
         $support_type = "flared",
         $corner_radius = 1,
-        $dish_skew_y = -1,
+        $dish_skew_y = -2,
         $dish_overdraw_height = 2,
         $dish_overdraw_width = 2
         
