@@ -52,7 +52,7 @@ module envelope(depth_difference=0) {
     cube([total_key_width() * s, total_key_height() * s, 0.01], center = true);
     top_placement(SMALLEST_POSSIBLE + depth_difference){
 //      cube([top_total_key_width() * s, top_total_key_height() * s, 0.01], center = true);
-                cylinder(h = 1, r1 = top_total_key_width() * s * .01, r2 = top_total_key_width() * s * .3, center = true);
+                cylinder(h = 1, r1 = 5, r2 = 5, center = true);
     }
   }
 }
