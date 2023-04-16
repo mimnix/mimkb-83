@@ -1,4 +1,4 @@
-include <./includes.scad>
+include <../includes.scad>
 
 // variables
 alpha_size = 4;
