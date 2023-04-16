@@ -7,15 +7,15 @@ module keytext(text, position, font_size, depth) {
   translate([woffset, hoffset, -depth+depth_offset]){
       ang = 3;
       d = 2*tan(ang);
-//  minkowski() {
-//// thin extrusion of 2D path
-//linear_extrude(height=$dish_depth + depth){
-//      text(text=text, font=$font, size=font_size, halign="center", valign="center");
-//}
-//bigness = .1;
-//// a 30 degree pyramid with its apex at the origin 
-//rotate_extrude() polygon([ [0,0] , [7*bigness, -6*bigness], [0, -6*bigness] ]);
-//}
+  minkowski() {
+// thin extrusion of 2D path
+linear_extrude(height=$dish_depth + depth){
+      text(text=text, font=$font, size=font_size, halign="center", valign="center");
+}
+bigness = .1;
+// a 30 degree pyramid with its apex at the origin 
+rotate_extrude() polygon([ [0,0] , [7*bigness, -6*bigness], [0, -6*bigness] ]);
+}
     color($tertiary_color) ;
     
   }
