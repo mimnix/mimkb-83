@@ -4,7 +4,7 @@ include <../functions.scad>
 include <./flat.scad>
 
 // figures out the scale factor needed to make a 45 degree wall
-function scale_for_45(height, starting_size) = (height * 2 + starting_size) / starting_size;
+function scale_for_45(height, starting_size) = (height * 8 + starting_size) / starting_size;
 
 // complicated since we want the different stems to work well
 // also kind of messy... oh well

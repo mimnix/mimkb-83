@@ -2,9 +2,9 @@
 
 // side sculpting functions
 // bows the sides out on stuff like SA and DSA keycaps
-function side_sculpting(progress) = (1 - progress) * $side_sculpting_factor;
+function side_sculpting(progress) = pow((1-(progress)),(.1)) * $side_sculpting_factor;
 // makes the rounded corners of the keycap grow larger as they move upwards
-function corner_sculpting(progress) = pow(progress, 2) * $corner_sculpting_factor;
+function corner_sculpting(progress) = pow(progress, 2) * $corner_sculpting_factor * 4;
 
 module sculpted_square_shape(size, delta, progress) {
   width = size[0];
