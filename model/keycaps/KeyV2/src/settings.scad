@@ -41,7 +41,7 @@ $keytop_thickness = 1;
 // Wall thickness, aka the thickness of the sides of the keycap. note this is the total thickness, aka 3 = 1.5mm walls
 $wall_thickness = 2;
 // Radius of corners of keycap
-$corner_radius = 1;
+$corner_radius = .5;
 // Width of the very bottom of the key
 $bottom_key_width = 18.16;
 // Height (from the front) of the very bottom of the key
