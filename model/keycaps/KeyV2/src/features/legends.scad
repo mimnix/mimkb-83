@@ -14,7 +14,7 @@ linear_extrude(height=$dish_depth + depth){
 }
 bigness = .1;
 // a 30 degree pyramid with its apex at the origin 
-rotate_extrude() polygon([ [0,0] , [7*bigness, -6*bigness], [0, -6*bigness] ]);
+rotate_extrude() polygon([ [0,0] , [7*bigness, -14*bigness], [0, -14*bigness] ]);
 }
     color($tertiary_color) ;
     
