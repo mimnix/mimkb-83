@@ -2,7 +2,7 @@ include <../includes.scad>
 
 // settings
 $outset_legends = false;
-$dish_type="spherical";
+
 
 // variables
 alpha_size = 5;
@@ -15,7 +15,7 @@ bottom_word_position = [0,.3];
 
 //ROW 2
 u(1.25) translate_u(-.25,-3) cherry_row(4) legend("shift",size=word_size, position=centered_position) key(
-        
+        $dish_type="spherical",
         $dish_depth=4,
         //$corner_radius = 2.5,
 //        $width_difference = 6,

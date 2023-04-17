@@ -2,11 +2,10 @@ include <../includes.scad>
 
 // settings
 $outset_legends = false;
-$dish_type="spherical";
 
 // variables
-alpha_size = 3;
-word_size = 2;
+alpha_size = 5;
+word_size = 4;
 centered_position = [0,0];
 top_alpha_position = [0,-0.8];
 bottom_alpha_position = [0,0.8];
@@ -66,24 +65,26 @@ module make_key(
     u(key_size) 
     translate_u(1+key_count+translate_bonus,-row_count) 
     cherry_row(cherry_row_number)
-    legend(legends[0], position=centered_position, size=word_size) 
+    get_legends(legends) 
+    //legend(legends[0], position=centered_position, size=word_size)
     key(
         $dish_depth=4,
         $total_depth = $total_depth+2.6,
         $support_type = "flared",
         $dish_skew_y = -2,
         $dish_overdraw_height = 2,
-        $dish_overdraw_width =2
+        $dish_overdraw_width =2,
+        $dish_type="spherical"
     );
 }
 
 module get_legends(
     legends
 ){
-    if(len(legends==2)){
-            
+    if(len(legends)==2){
+        legend(legends[0], position=top_alpha_position, size=word_size) legend(legends[1], position=bottom_alpha_position, size=word_size) children();
     }
     else{
-        
+        legend(legends[0], position=centered_position, size=word_size) children();
     }
 }
