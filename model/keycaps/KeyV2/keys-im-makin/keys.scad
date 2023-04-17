@@ -10,16 +10,40 @@ top_word_position = [0,-.3];
 bottom_word_position = [0,.3];
 
 //ROW FN
-u(1.25) translate_u(-.25,1) cherry_row(1) legend("esc",size=word_size) key();
+
 legends_row_FN = [
- ["F1"], ["F2"], ["F3"], ["F4"], ["F5"], ["F6"], ["F7"], ["F8"], ["F9"], ["F10"], ["F11"], ["F12"]
+ ["esc"], ["F1"], ["F2"], ["F3"], ["F4"], ["F5"], ["F6"], ["F7"], ["F8"], ["F9"], ["F10"], ["F11"], ["F12"], ["delete"]
 ];
 
 for(y = [0:len(legends_row_FN)-1]){
-    translate_u(y+1,1) cherry_row(1) legend(legends_row_FN[y][0], position=[0,0], size=alpha_size) key();
-}
+    if(y=0){
+        u(1.25) 
+        translate_u(-.25,1) 
+        cherry_row(1) 
+        legend(legends_row_FN[y][0], position=centered_position, size=word_size) 
+        key(
 
-u(1.25) translate_u(len(legends_row_FN)+1.25,1) cherry_row(1) legend("delete", size=word_size) key();
+        );
+    }
+    else if(y=len(legends_row_FN)-1){
+        u(1.25) 
+        translate_u(len(legends_row_FN)+1.25,1) 
+        cherry_row(1) 
+        legend(legends_row_FN[y][0], position=centered_position, size=word_size) 
+        key(
+            
+        );
+    }
+    else{
+        u(1) 
+        translate_u(y+1,1) 
+        cherry_row(1) 
+        legend(legends_row_FN[y][0], position=[0,0], size=alpha_size) 
+        key(
+
+        );
+    }
+}
 
 //ROW 5
 u(1.25) translate_u(-.25) cherry_row(1) legend("\~",size=alpha_size,position=top_alpha_position) legend("\`",size=alpha_size,position=bottom_alpha_position) key();

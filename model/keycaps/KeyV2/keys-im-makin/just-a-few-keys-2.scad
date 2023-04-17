@@ -2,11 +2,12 @@ include <../includes.scad>
 
 // settings
 $outset_legends = false;
+$dish_type="spherical";
 
 // variables
 alpha_size = 5;
-word_size = 3;
-centered_position = [0,-.4];
+word_size = 4;
+centered_position = [0,-1];
 top_alpha_position = [0,-0.8];
 bottom_alpha_position = [0,0.8];
 top_word_position = [0,-.3];
@@ -14,14 +15,14 @@ bottom_word_position = [0,.3];
 
 //ROW 2
 u(1.25) translate_u(-.25,-3) cherry_row(4) legend("shift",size=word_size, position=centered_position) key(
-        $dish_type="spherical",
+        
         $dish_depth=4,
         //$corner_radius = 2.5,
 //        $width_difference = 6,
 //        $height_difference = 6,
 //        $height_slices = 4,
         //$corner_sculpting_factor = 10,
-        $total_depth = $total_depth+2,
+        $total_depth = $total_depth+2.6,
 //        $top_tilt = 10,
         $support_type = "flared",
 //        $corner_radius = 1,
@@ -30,7 +31,7 @@ u(1.25) translate_u(-.25,-3) cherry_row(4) legend("shift",size=word_size, positi
         $dish_overdraw_width =2
 );
 legends_row_2 = [
- ["N"]
+ ["L"]
 ];
 for(y = [0:len(legends_row_2)-1]){
     if(len(legends_row_2[y]) == 2){
@@ -46,7 +47,7 @@ for(y = [0:len(legends_row_2)-1]){
         //$corner_sculpting_factor = 10,
         $support_type = "flared",
         //$corner_radius = 1,
-        $total_depth = $total_depth+2,
+        $total_depth = $total_depth+2.6,
         $dish_skew_y = -2,
         $dish_overdraw_height = 2,
         $dish_overdraw_width = 2
