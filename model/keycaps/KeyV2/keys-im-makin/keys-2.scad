@@ -24,16 +24,16 @@ legends_row_numbers = [
 ];
 
 rows = [
-    legends_row_FN
+    [legends_row_FN, 1]
 ];
 
 for(row=[0:len(rows)-1]){
-    for(y = [0:len(rows[row])-1]){
+    for(y = [0:len(rows[row][0])-1]){
         if(y==0){
             u(1.25) 
             translate_u(-.25,1) 
             cherry_row(1) 
-            legend(rows[row][y][0], position=centered_position, size=word_size) 
+            legend(rows[row][0][y][0], position=centered_position, size=word_size) 
             key(
                 $dish_depth=4,
                 $total_depth = $total_depth+2.6,
@@ -43,11 +43,11 @@ for(row=[0:len(rows)-1]){
                 $dish_overdraw_width =2
             );
         }
-        else if(y==len(rows[row])-1){
+        else if(y==len(rows[row][0])-1){
             u(1.25) 
-            translate_u(len(rows[row])+1.25,1) 
+            translate_u(len(rows[row][0])+1.25,1) 
             cherry_row(1) 
-            legend(rows[row][y][0], position=centered_position, size=word_size) 
+            legend(rows[row][0][y][0], position=centered_position, size=word_size) 
             key(
                 $dish_depth=4,
                 $total_depth = $total_depth+2.6,
@@ -61,7 +61,7 @@ for(row=[0:len(rows)-1]){
             u(1) 
             translate_u(y+1,1) 
             cherry_row(1) 
-            legend(rows[row][y][0], position=[0,0], size=alpha_size) 
+            legend(rows[row][0][y][0], position=[0,0], size=alpha_size) 
             key(
                 $dish_depth=4,
                 $total_depth = $total_depth+2.6,
