@@ -20,32 +20,49 @@ legends_row_FN = [
 ];
 
 legends_row_numbers = [
-    ["\~","\`"], ["!","1"], ["\@","2"], ["#","3"], ["$","4"], ["%","5"], ["6","^"], ["7","&"], ["8","*"], ["9","("], ["0",")"], ["_","-"], ["+","="]
+    ["\~","\`"], ["!","1"], ["\@","2"], ["#","3"], ["$","4"], ["%","5"], ["6","^"], ["7","&"], ["8","*"], ["9","("], ["0",")"], ["_","-"], ["+","="], ["backspace"]
+];
+
+legends_row_qwerty = [
+    ["tab"], ["Q"], ["W"], ["E"], ["R"], ["T"], ["Y"], ["U"], ["I"], ["O"], ["P"], ["{","["], ["}","]"], ["pg up"]
 ];
 
 rows = [
-    [legends_row_FN, 1]
+ // [ legends row, cherry row number ]
+    //[legends_row_FN, 1],
+    [legends_row_numbers, 1]//,
+    //[legends_row_qwerty, 2]
 ];
 
 for(row=[0:len(rows)-1]){
     for(y = [0:len(rows[row][0])-1]){
         if(y==0){
-            u(1.25) 
-            translate_u(-.25,1) 
-            cherry_row(1) 
-            legend(rows[row][0][y][0], position=centered_position, size=word_size) 
-            key(
-                $dish_depth=4,
-                $total_depth = $total_depth+2.6,
-                $support_type = "flared",
-                $dish_skew_y = -2,
-                $dish_overdraw_height = 2,
-                $dish_overdraw_width =2
-            );
+            if(len(rows[row][0][y])==2){
+                make_key(
+                    key_size=1.25,
+                    row_count=row,
+                    cherry_row_number=rows[row][1],
+                    legends=rows[row][0][y]
+                );
+            }
+            else{
+                u(1.25) 
+                translate_u(-.25,-row) 
+                cherry_row(1)
+                legend(rows[row][0][y][0], position=centered_position, size=word_size) 
+                key(
+                    $dish_depth=4,
+                    $total_depth = $total_depth+2.6,
+                    $support_type = "flared",
+                    $dish_skew_y = -2,
+                    $dish_overdraw_height = 2,
+                    $dish_overdraw_width =2
+                );
+            }
         }
         else if(y==len(rows[row][0])-1){
             u(1.25) 
-            translate_u(len(rows[row][0])+1.25,1) 
+            translate_u(len(rows[row][0])+1.25,-row) 
             cherry_row(1) 
             legend(rows[row][0][y][0], position=centered_position, size=word_size) 
             key(
@@ -59,7 +76,7 @@ for(row=[0:len(rows)-1]){
         }
         else{
             u(1) 
-            translate_u(y+1,1) 
+            translate_u(y+1,-row) 
             cherry_row(1) 
             legend(rows[row][0][y][0], position=[0,0], size=alpha_size) 
             key(
@@ -72,4 +89,25 @@ for(row=[0:len(rows)-1]){
             );
         }
     }
+}
+module make_key(
+    key_size, 
+    row_count, 
+    cherry_row_number,
+    legends
+){
+    
+        u(key_size) 
+        translate_u(-.25,-row_count) 
+        cherry_row(cherry_row_number)
+        legend(legends[0], position=centered_position, size=word_size) 
+        key(
+            $dish_depth=4,
+            $total_depth = $total_depth+2.6,
+            $support_type = "flared",
+            $dish_skew_y = -2,
+            $dish_overdraw_height = 2,
+            $dish_overdraw_width =2
+        );
+    
 }
