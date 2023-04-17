@@ -29,19 +29,24 @@ legends_row_qwerty = [
 
 rows = [
  // [ legends row, cherry row number ]
-    //[legends_row_FN, 1],
-    [legends_row_numbers, 1]//,
-    //[legends_row_qwerty, 2]
+    [legends_row_FN, 1],
+    [legends_row_numbers, 1],
+    [legends_row_qwerty, 2]
 ];
 
 for(row=[0:len(rows)-1]){
     for(y = [0:len(rows[row][0])-1]){
-
         if(y==len(rows[row][0])-1){
           // consider setting key offset
         }
         make_key(
-            key_size=(y==0 || y==len(rows[row][0])-1) ? 1.25 : 1, 
+            key_size=
+                (y==0 || y==len(rows[row][0])-1) 
+                ? 1.25 : 1,
+            translate_bonus=
+                y==0
+                ? -.25 : (y==len(rows[row][0])-1
+                    ? .25 : 0),
             row_count=row, 
             key_count=y,
             cherry_row_number=rows[row][1],
@@ -49,15 +54,17 @@ for(row=[0:len(rows)-1]){
         );
     }
 }
+
 module make_key(
-    key_size, 
+    key_size,
+    translate_bonus,
     row_count, 
     key_count,
     cherry_row_number,
     legends
 ){
     u(key_size) 
-    translate_u(key_count+1.25,-row_count) 
+    translate_u(1+key_count+translate_bonus,-row_count) 
     cherry_row(cherry_row_number)
     legend(legends[0], position=centered_position, size=word_size) 
     key(
