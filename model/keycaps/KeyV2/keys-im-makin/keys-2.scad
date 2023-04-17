@@ -36,78 +36,47 @@ rows = [
 
 for(row=[0:len(rows)-1]){
     for(y = [0:len(rows[row][0])-1]){
-        if(y==0){
-            if(len(rows[row][0][y])==2){
-                make_key(
-                    key_size=1.25,
-                    row_count=row,
-                    cherry_row_number=rows[row][1],
-                    legends=rows[row][0][y]
-                );
-            }
-            else{
-                u(1.25) 
-                translate_u(-.25,-row) 
-                cherry_row(1)
-                legend(rows[row][0][y][0], position=centered_position, size=word_size) 
-                key(
-                    $dish_depth=4,
-                    $total_depth = $total_depth+2.6,
-                    $support_type = "flared",
-                    $dish_skew_y = -2,
-                    $dish_overdraw_height = 2,
-                    $dish_overdraw_width =2
-                );
-            }
+
+        if(y==len(rows[row][0])-1){
+          // consider setting key offset
         }
-        else if(y==len(rows[row][0])-1){
-            u(1.25) 
-            translate_u(len(rows[row][0])+1.25,-row) 
-            cherry_row(1) 
-            legend(rows[row][0][y][0], position=centered_position, size=word_size) 
-            key(
-                $dish_depth=4,
-                $total_depth = $total_depth+2.6,
-                $support_type = "flared",
-                $dish_skew_y = -2,
-                $dish_overdraw_height = 2,
-                $dish_overdraw_width =2
-            );
-        }
-        else{
-            u(1) 
-            translate_u(y+1,-row) 
-            cherry_row(1) 
-            legend(rows[row][0][y][0], position=[0,0], size=alpha_size) 
-            key(
-                $dish_depth=4,
-                $total_depth = $total_depth+2.6,
-                $support_type = "flared",
-                $dish_skew_y = -2,
-                $dish_overdraw_height = 2,
-                $dish_overdraw_width =2
-            );
-        }
+        make_key(
+            key_size=(y==0 || y==len(rows[row][0])-1) ? 1.25 : 1, 
+            row_count=row, 
+            key_count=y,
+            cherry_row_number=rows[row][1],
+            legends=rows[row][0][y]
+        );
     }
 }
 module make_key(
     key_size, 
     row_count, 
+    key_count,
     cherry_row_number,
     legends
 ){
-    
-        u(key_size) 
-        translate_u(-.25,-row_count) 
-        cherry_row(cherry_row_number)
-        legend(legends[0], position=centered_position, size=word_size) 
-        key(
-            $dish_depth=4,
-            $total_depth = $total_depth+2.6,
-            $support_type = "flared",
-            $dish_skew_y = -2,
-            $dish_overdraw_height = 2,
-            $dish_overdraw_width =2
-        );
-    
+    u(key_size) 
+    translate_u(key_count+1.25,-row_count) 
+    cherry_row(cherry_row_number)
+    legend(legends[0], position=centered_position, size=word_size) 
+    key(
+        $dish_depth=4,
+        $total_depth = $total_depth+2.6,
+        $support_type = "flared",
+        $dish_skew_y = -2,
+        $dish_overdraw_height = 2,
+        $dish_overdraw_width =2
+    );
+}
+
+module get_legends(
+    legends
+){
+    if(len(legends==2)){
+            
+    }
+    else{
+        
+    }
 }
