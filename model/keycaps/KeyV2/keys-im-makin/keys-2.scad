@@ -19,18 +19,32 @@ legends_row_FN = [
 ];
 
 legends_row_numbers = [
-    ["\~","\`"], ["!","1"], ["\@","2"], ["#","3"], ["$","4"], ["%","5"], ["6","^"], ["7","&"], ["8","*"], ["9","("], ["0",")"], ["_","-"], ["+","="], ["backspace"]
+    ["\~","\`"], ["!","1"], ["\@","2"], ["#","3"], ["$","4"], ["%","5"], ["^","6"], ["&","7"], ["*","8"], ["(","9"], [")","0"], ["_","-"], ["+","="], ["back","space"]
 ];
 
 legends_row_qwerty = [
     ["tab"], ["Q"], ["W"], ["E"], ["R"], ["T"], ["Y"], ["U"], ["I"], ["O"], ["P"], ["{","["], ["}","]"], ["pg up"]
 ];
 
+legends_row_asdf = [
+ ["caps","lock"],["A"], ["S"], ["D"], ["F"], ["G"], ["H"], ["J"], ["K"], ["L"], [":",";"], ["\"","\'"], ["|","\\"], ["return"]
+];
+
+legends_row_zxc = [
+ ["shift"], ["Z"], ["X"], ["C"], ["V"], ["B"], ["N"], ["M"], ["<",","], [">","."], ["?","/"],["ˆ"],[], ["shift"] 
+];
+
+legends_row_last = [
+    ["ctrl"],["fn"],["win"],["alt"],["home"],[],[],[],[],["end"],["‹"],["ˇ"],["›"],["pg dn"]
+];
 rows = [
  // [ legends row, cherry row number ]
     [legends_row_FN, 1],
     [legends_row_numbers, 1],
-    [legends_row_qwerty, 2]
+    [legends_row_qwerty, 2],
+    [legends_row_asdf, 3],
+    [legends_row_zxc, 4],
+    [legends_row_last, 5]
 ];
 
 for(row=[0:len(rows)-1]){

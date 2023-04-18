@@ -101,23 +101,23 @@ for(y = [0:len(legends_row_2)-1]){
 }
 u(1.25) translate_u(13.25,-3) cherry_row(4) legend("shift", size=word_size) key();
 
-u(1) translate_u(11,-3) cherry_row(4) legend("↑",size=7) key();
+u(1) translate_u(11,-3) cherry_row(4) legend("ˆ",size=alpha_size) key();
 u(1) translate_u(12,-3) cherry_row(4) legend("",size=0) key();
 
 //ROW 1
-u(1.25) translate_u(-.25,-4) cherry_row(5) legend("ctrl",size=word_size) key();
-u(1) translate_u(1,-4) cherry_row(5) legend("fn",size=word_size) key();
-u(1) translate_u(2,-4) cherry_row(5) legend("super",size=word_size) key();
-u(1) translate_u(3,-4) cherry_row(5) legend("alt",size=word_size) key();
-u(1) translate_u(4,-4) cherry_row(5) legend("home",size=word_size) key();
+u(1.25) translate_u(-.25,-4) cherry_row(5) legend("ctrl",size=alpha_size) key();
+u(1) translate_u(1,-4) cherry_row(5) legend("fn",size=alpha_size) key();
+u(1) translate_u(2,-4) cherry_row(5) legend("super",size=alpha_size) key();
+u(1) translate_u(3,-4) cherry_row(5) legend("alt",size=alpha_size) key();
+u(1) translate_u(4,-4) cherry_row(5) legend("home",size=alpha_size) key();
 u(2) translate_u(5.5,-4) legend(" ",size=0) key($inverted_dish=true);
 u(2) translate_u(7.5,-4) legend(" ",size=0) key($inverted_dish=true);
-//translate_u(10.75,-4) cherry_row(5) legend("alt",size=word_size) key();
-//translate_u(11.75,-4) cherry_row(5) legend("fn",size=word_size) key();
-//translate_u(12.75,-4) cherry_row(5) legend("ctrl",size=word_size) key();
-//translate_u(9,-4) cherry_row(5) legend("|",size=alpha_size,position=top_alpha_position) legend("\\",size=alpha_size,position=bottom_alpha_position) key();
+//translate_u(10.75,-4) cherry_row(5) legend("alt",size=alpha_size) key();
+//translate_u(11.75,-4) cherry_row(5) legend("fn",size=alpha_size) key();
+//translate_u(12.75,-4) cherry_row(5) legend("ctrl",size=alpha_size) key();
+//translate_u(9,-4) cherry_row(5) legend("|",size=word_size,position=top_alpha_position) legend("\\",size=word_size,position=bottom_alpha_position) key();
 translate_u(9,-4) cherry_row(5) legend("end",size=word_size) key();
-translate_u(10,-4) cherry_row(5) legend("←",size=7) key();
-translate_u(11,-4) cherry_row(5) legend("↓",size=7) key();
-translate_u(12,-4) cherry_row(5) legend("→",size=7) key();
-u(1.25) translate_u(13.25,-4) cherry_row(4) legend("page down", size=word_size) key();
+translate_u(10,-4) cherry_row(5) legend("‹",size=alpha_size) key();
+translate_u(11,-4) cherry_row(5) legend("ˇ",size=alpha_size) key();
+translate_u(12,-4) cherry_row(5) legend("›",size=alpha_size) key();
+u(1.25) translate_u(13.25,-4) cherry_row(4) legend("pg dn", size=alpha_size) key();
