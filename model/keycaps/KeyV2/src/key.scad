@@ -49,12 +49,12 @@ module minkowski_object() {
 module envelope(depth_difference=0) {
   s = 1.5;
   hull(){
-    rotate([0,0,0]) cube([total_key_width() * s, total_key_height() * s , 3], center = true);
+    rotate([0,0,0]) cube([total_key_width() * s, total_key_height() * s , 5], center = true);
     top_placement(SMALLEST_POSSIBLE + depth_difference){
 //      cube([top_total_key_width() * s, top_total_key_height() * s, 0.01], center = true);
                
         // cylinder(h = 1, r1 = 4, r2 = 8, center = true)
-        rotate([0,0,0]) translate([0,-10,-3.7]) cube([total_key_width() * s, total_key_height() * s *1.3, 1], center = true);
+        rotate([0,0,0]) translate([0,-10,-3.7]) cube([total_key_width() * s, total_key_height() * s *.5, 1], center = true);
     top_placement(SMALLEST_POSSIBLE + depth_difference)
         ;
     }
