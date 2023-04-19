@@ -4,13 +4,13 @@
 $key_length = 1.0; // Range not working in thingiverse customizer atm [1:0.25:16]
 
 // What type of stem you want. Most people want Cherry.
-$stem_type = "rounded_cherry";  // [cherry, alps, rounded_cherry, box_cherry, filled, disable]
+$stem_type = "cherry";  // [cherry, alps, rounded_cherry, box_cherry, filled, disable]
 
 // The stem is the hardest part to print, so this variable controls how much 'slop' there is in the stem
 // if your keycaps stick in the switch raise this value
-$stem_slop = 0.35; // Not working in thingiverse customizer atm [0:0.01:1]
+$stem_slop = .35; // Not working in thingiverse customizer atm [0:0.01:1]
 // broke this out. if your keycaps are falling off lower this value. only works for cherry stems rn
-$stem_inner_slop = 0.2;
+$stem_inner_slop = 0.1;
 
 // Font size used for text
 $font_size = 6;
@@ -20,18 +20,18 @@ $inverted_dish = false;
 
 // change aggressiveness of double sculpting
 // this is the radius of the cylinder the keytops are placed on
-$double_sculpt_radius = 200;
+$double_sculpt_radius = 10;
 
 
 // Support type. default is "flared" for easy FDM printing; bars are more realistic, and flat could be for artisans
-$support_type = "flared"; // [flared, bars, flat, disable]
+$support_type = "bars"; // [flared, bars, flat, disable]
 
 // Supports for the stem, as it often comes off during printing. Reccommended for most machines
 $stem_support_type = "tines"; // [tines, brim, disabled]
 
 // make legends outset instead of inset.
 // broken off from artisan support since who wants outset legends?
-$outset_legends = false;
+$outset_legends = true;
 
 /* [Key] */
 // Height in units of key. should remain 1 for most uses
@@ -39,15 +39,15 @@ $key_height = 1.0;
 // Keytop thickness, aka how many millimeters between the inside and outside of the top surface of the key
 $keytop_thickness = 1;
 // Wall thickness, aka the thickness of the sides of the keycap. note this is the total thickness, aka 3 = 1.5mm walls
-$wall_thickness = 3;
+$wall_thickness = 2;
 // Radius of corners of keycap
-$corner_radius = 1;
+$corner_radius = .5;
 // Width of the very bottom of the key
 $bottom_key_width = 18.16;
 // Height (from the front) of the very bottom of the key
 $bottom_key_height = 18.16;
 // How much less width there is on the top. eg top_key_width = bottom_key_width - width_difference
-$width_difference = 6;
+$width_difference = 1;
 // How much less height there is on the top
 $height_difference = 4;
 // How deep the key is, before adding a dish
@@ -69,7 +69,7 @@ $top_skew_x = 0;
 // How far the throw distance of the switch is. determines how far the 'cross' in the cherry switch digs into the stem, and how long the keystem needs to be before supports can start. luckily, alps and cherries have a pretty similar throw. can modify to have stouter keycaps for low profile switches, etc
 $stem_throw = 4;
 // Diameter of the outside of the rounded cherry stem
-$rounded_cherry_stem_d = 5.5;
+$rounded_cherry_stem_d = 8;
 
 
 // How much higher the stem is than the bottom of the keycap.
@@ -94,7 +94,7 @@ $height_slices = 1;
 // What type of dish the key has. note that unlike stems and supports a dish ALWAYS gets rendered.
 $dish_type = "cylindrical"; // [cylindrical, spherical, sideways cylindrical, old spherical, disable]
 // How deep the dish 'digs' into the top of the keycap. this is max depth, so you can't find the height from total_depth - dish_depth. besides the top is skewed anyways
-$dish_depth = 1;
+$dish_depth = 3;
 // How skewed in the x direction the dish is
 $dish_skew_x = 0;
 // How skewed in the y direction (height) the dish is
@@ -110,12 +110,12 @@ $dish_overdraw_height = 0;
 
 /* [Misc] */
 // There's a bevel on the cherry stems to aid insertion / guard against first layer squishing making a hard-to-fit stem.
-$cherry_bevel = true;
+$cherry_bevel = false;
 
 // How tall in mm the stem support is, if there is any. stem support sits around the keystem and helps to secure it while printing.
-$stem_support_height = .8;
+$stem_support_height = 1;
 // Font used for text
-$font="DejaVu Sans Mono:style=Book";
+$font="Futura:style=Bold";
 // Whether or not to render fake keyswitches to check clearances
 $clearance_check = false;
 // Should be faster, also required for concave shapes
@@ -140,7 +140,7 @@ $key_bump_edge = 0.4;
 /* [Hidden] */
 
 // set this to true if you are making double sculpted keycaps
-$double_sculpted = false;
+$double_sculpted = true;
 
 //list of legends to place on a key format: [text, halign, valign, size]
 //halign = "left" or "center" or "right"
@@ -158,7 +158,7 @@ $front_legends = [];
 $front_print_legends = false;
 
 // how recessed inset legends / artisans are from the top of the key
-$inset_legend_depth = 0.2;
+$inset_legend_depth = 0.4;
 
 // Dimensions of alps stem
 $alps_stem = [4.45, 2.25];
