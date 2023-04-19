@@ -16,20 +16,23 @@ bottom_word_position = [0,.3];
 //ROW 2
 u(1.25) translate_u(-.25,-3) cherry_row(4) legend("shift",size=word_size, position=centered_position) key(
         $dish_type="spherical",
-        $dish_depth=4,
+        $dish_depth=6,
         //$corner_radius = 2.5,
 //        $width_difference = 6,
 //        $height_difference = 6,
 //        $height_slices = 4,
         //$corner_sculpting_factor = 10,
         $total_depth = $total_depth+2.6,
-//        $top_tilt = 10,
+        $top_tilt = 0,
         $support_type = "flared",
 //        $corner_radius = 1,
         $dish_skew_y = -2,
-        $dish_overdraw_height = 2,
-        $dish_overdraw_width =2
-);
+        $dish_overdraw_height = -1,
+        $dish_overdraw_width = -1
+) 
+//envelope()
+
+;
 legends_row_2 = [
  ["L"]
 ];
@@ -42,15 +45,16 @@ for(y = [0:len(legends_row_2)-1]){
     else{
         translate_u(y+1,-3) cherry_row(4) legend(legends_row_2[y][0], position=centered_position, size=alpha_size) key(
         $dish_type="spherical",
-        $dish_depth=4,
+        $dish_depth=6,
+        $top_tilt = 0,
         //$corner_radius = 2.5,
         //$corner_sculpting_factor = 10,
         $support_type = "flared",
         //$corner_radius = 1,
         $total_depth = $total_depth+2.6,
         $dish_skew_y = -2,
-        $dish_overdraw_height = 2,
-        $dish_overdraw_width = 2
+        $dish_overdraw_height = -1,
+        $dish_overdraw_width = -1
         
         );
         
